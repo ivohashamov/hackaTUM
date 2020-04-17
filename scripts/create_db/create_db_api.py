@@ -4,7 +4,7 @@ import time
 
 def create_table_api():
     # check if table exist
-    db = TinyDB('../DB/data_base.json', default_table='ventilators_data')
+    db = TinyDB('../DB/api_data_base.json', default_table='ventilators_data')
     while True:
         # insert data
         for unit in download_jsons():
