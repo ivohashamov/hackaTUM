@@ -1,14 +1,15 @@
 from scripts.load_data.download import download_jsons
-from tinydb import TinyDB
+from scripts.library.tinydb import TinyDB
 import time
 
-def create_tables():
+def create_table_api():
     # check if table exist
     db = TinyDB('../DB/data_base.json', default_table='ventilators_data')
-    i = 0
-    while i < 5:
+    while True:
+        # insert data
         for unit in download_jsons():
             db.insert(unit)
-        #time.sleep(5)
-        i += 1
-create_tables()
+        # sleep for 5 min
+        time.sleep(5)
+
+create_table_api()
