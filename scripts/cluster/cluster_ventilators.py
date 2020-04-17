@@ -1,14 +1,13 @@
-from sklearn.cluster import KMeans
-from tinydb import TinyDB
+from scripts.library.sklearn.cluster import KMeans
+from scripts.library.tinydb import TinyDB
 import argparse as ap
-import random
 parser = ap.ArgumentParser()
 parser.add_argument('--v', required=True, type=int)
 args = parser.parse_args()
 v = args.v
 
 def cluster_reades(v):
-    db = TinyDB('./DB/data_base.json', default_table='ventilators_data')
+    db = TinyDB('./DB/api_data_base.json', default_table='ventilators_data')
     last_data_for_all_patient = {}
     info_for_all_patients = db.all()
 
@@ -30,10 +29,6 @@ def cluster_reades(v):
         else:
             clusters[num] = [list_with_id[i]]
     return [unit for unit in clusters.values() if len(unit) >= 2]
-
-
-
-
 
 def cluster(c: int, info):
     model = KMeans(n_clusters=c)

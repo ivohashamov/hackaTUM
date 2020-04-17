@@ -1,4 +1,4 @@
-from tinydb import TinyDB, Query
+from scripts.library.tinydb import TinyDB, Query
 import argparse as ap
 parser = ap.ArgumentParser()
 parser.add_argument('--p_id', required=True, type=str)
@@ -6,7 +6,7 @@ args = parser.parse_args()
 p_id = args.p_id
 
 def load_data(p_id: str):
-     db = TinyDB('../DB/data_base.json', default_table='ventilators_data')
+     db = TinyDB('../DB/patient_data_base.json', default_table='ventilators_data')
      query = Query()
      info_for_given_patient = db.search(query.data_id == p_id)
      d_with_nums = {}
@@ -17,6 +17,7 @@ def load_data(p_id: str):
                else:
                     d_with_nums[k] = [v]
      return filter_dict(d_with_nums)
+
 def filter_dict(d: dict):
      d['data_id'] = d['data_id'][-1]
      d['device_id'] = d['device_id'][-1]
@@ -31,3 +32,4 @@ def filter_dict(d: dict):
      d['ventilationMode'] = d['ventilationMode'][-1]
      return d
 
+print(load_data(p_id))

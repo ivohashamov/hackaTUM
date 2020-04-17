@@ -1,0 +1,22 @@
+.PatientList {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: #5d5c61;
+  overflow: auto;
+}
+
+.Patient {
+  height: 15%;
+  background-color: #557a95;
+  border: 2px solid #b1a296;
+  margin: 5px;
+  font-size: 1.5rem;
+  color: white;
+  padding: 5% 0;
+  border-radius: 10px;
+}
+
+.Patient:hover {
+  background-color: #5d5c61;
+  cursor: pointer;
+}
