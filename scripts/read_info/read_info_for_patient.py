@@ -1,5 +1,7 @@
 from scripts.library.tinydb import TinyDB, Query
 import argparse as ap
+from scripts.read_info.find_patient_vent import load_vent_id
+
 parser = ap.ArgumentParser()
 parser.add_argument('--p_id', required=True, type=str)
 args = parser.parse_args()
@@ -9,7 +11,7 @@ p_id = args.p_id
 def load_data(p_id: str):
     db = TinyDB('../DB/api_data_base.json', default_table='ventilators_data')
     query = Query()
-    info_for_given_patient = db.search(query.data_id == p_id)
+    info_for_given_patient = db.search(query.data_id == load_vent_id(p_id))
     d_with_nums = {}
     for unit in info_for_given_patient:
         for k, v in unit.items():
@@ -33,6 +35,5 @@ def filter_dict(d: dict):
     d['pressure_max'] = d['pressure_max'][-1]
     d['ventilationMode'] = d['ventilationMode'][-1]
     return d
-
 
 print(load_data(p_id))
