@@ -1,0 +1,25 @@
+
+.Ventilator-header {
+  position: absolute;
+  height: 50px;
+  width: calc(100% - 455px);
+  background-color: #b1a296;
+  text-align: left;
+  padding: 10px;
+  border-left: 2px dashed #5d5c61;
+}
+
+.Ventilator-content {
+  position: absolute;
+  height: calc(100% - 130px);
+  top: 50px;
+  display: flex;
+  width: calc(100% - 455px);
+}
+
+.Ventilator-footer {
+  top: calc(100% - 80px);
+  position: absolute;
+  height: 80px;
+  width: calc(100% - 455px);
+}
