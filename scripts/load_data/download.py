@@ -1,7 +1,8 @@
 from urllib.request import Request, urlopen
 import json as js
 
-def download_jsons(link: str=None):
+
+def download_jsons(link: str = None):
     if link is None:
         link = 'http://api.theopenvent.com/exampledata/v2/data'
     # create request
