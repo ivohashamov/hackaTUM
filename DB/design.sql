@@ -10,7 +10,7 @@ CREATE TABLE patients (
     p_id int NOT NULL auto_increment,
     name varchar(200) NOT NULL,
     doc_id int,
-    PRIMARY KEY (p_id)
+    PRIMARY KEY (p_id),
     FOREIGN KEY (doc_id) REFERENCES doctors(doc_id)
 );
 
