@@ -1,3 +1,4 @@
+##**OpenVenTUM**
 ## Inspiration
 During the **Corona** (COVID-19) pandemic it became obvious that a **lack** of healthcare workers and equipment can cause a severe impact in the fight against the virus. The rapidly growing **shortage of ventilators** is becoming of dire concern. What is less widely discussed is the **concerning shortage of professionals** to manage ventilators, as increasing numbers of healthcare workers are becoming **infected, hospitalized, and dying**. We were inspired by this problem to provide a **cutting edge solution**, which can **significantly facilitate** the work of the doctors.
 
