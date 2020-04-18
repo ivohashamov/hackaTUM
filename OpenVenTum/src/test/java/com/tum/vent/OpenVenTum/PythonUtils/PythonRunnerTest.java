@@ -17,7 +17,7 @@ public class PythonRunnerTest {
 
     @Test
     public void clusterVents() throws IOException, InterruptedException {
-        String json = PythonRunner.cluster_ventilators("4");
+        String json = PythonRunner.cluster_ventilators("1");
         System.out.println(json);
         assertNotEmpty(json);
     }
