@@ -1,1 +1,1 @@
-{"patients": {"1": {"p_id": "1", "name": "Ivan", "doc_id": "10", "vent": "0"}}}
+{"patients": {"1": {"p_id": "2", "name": "Ivan", "doc_id": "10", "vent": "1"}, "2": {"p_id": "3", "name": "Stefani", "doc_id": "10", "vent": "1"}}}

@@ -1,4 +1,4 @@
-from scripts.library.tinydb import TinyDB, Query
+from tinydb import TinyDB, Query
 import argparse as ap
 parser = ap.ArgumentParser()
 parser.add_argument('--name', required=True, type=str)
@@ -9,11 +9,11 @@ doc_id = args.doc_id
 
 
 def create_doctor(name: str, doc_id: str):
-    db = TinyDB('../DB/doctor_data_base.json', default_table='patients')
+    db = TinyDB('scripts/DB/doctor_data_base.json', default_table='doctor')
     query = Query()
 
     # check if doctor with this id exist
-    info_for_given_patient = db.search(query.p_id == doc_id)
+    info_for_given_patient = db.search(query.doc_id == doc_id)
     unit = {"name": name,
             "doc_id": doc_id,
             }
