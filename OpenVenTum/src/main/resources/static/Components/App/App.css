@@ -1,20 +1,55 @@
 .App {
   text-align: center;
   font-family: "Work Sans", sans-serif;
+  font-size: 20px;
 }
 
-.App h1 {
-  font-weight: 600;
-}
-
-.App #header {
+#header {
   position: absolute;
   background-color: #7395ae;
   color: white;
   height: 15%;
+  max-height: 120px;
   width: 100%;
+  display: flex;
+}
+
+#logo {
+  width: 10%;
+}
+
+#logo img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin: 10px;
+}
+
+h1 {
+  font-weight: 600;
+  min-width: 900px;
   padding: 15px;
   font-size: 4rem;
+  width: 70%;
+}
+
+
+#user {
+  width: 20%;
+  height: 100%;
+  float: right;
+  padding: 10px;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+#logout {
+  color: white;
+  background-color: #b1a296;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1.25rem;
 }
 
 .main {

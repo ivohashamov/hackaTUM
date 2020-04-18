@@ -97,7 +97,7 @@
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".App {\r\n  text-align: center;\r\n  font-family: \"Work Sans\", sans-serif;\r\n}\r\n\r\n.App h1 {\r\n  font-weight: 600;\r\n}\r\n\r\n.App #header {\r\n  position: absolute;\r\n  background-color: #7395ae;\r\n  color: white;\r\n  height: 15%;\r\n  width: 100%;\r\n  padding: 15px;\r\n  font-size: 4rem;\r\n}\r\n\r\n.main {\r\n  top: 15%;\r\n  position: absolute;\r\n  display: flex;\r\n  width: 100%;\r\n  height: 85%;\r\n}\r\n\r\n.patients {\r\n  width: 280px;\r\n  height: 100%;\r\n}\r\n", ""]);
+exports.push([module.i, ".App {\r\n  text-align: center;\r\n  font-family: \"Work Sans\", sans-serif;\r\n  font-size: 20px;\r\n}\r\n\r\n#header {\r\n  position: absolute;\r\n  background-color: #7395ae;\r\n  color: white;\r\n  height: 15%;\r\n  max-height: 120px;\r\n  width: 100%;\r\n  display: flex;\r\n}\r\n\r\n#logo {\r\n  width: 10%;\r\n}\r\n\r\n#logo img {\r\n  width: 80px;\r\n  height: 80px;\r\n  float: left;\r\n  margin: 10px;\r\n}\r\n\r\nh1 {\r\n  font-weight: 600;\r\n  min-width: 900px;\r\n  padding: 15px;\r\n  font-size: 4rem;\r\n  width: 70%;\r\n}\r\n\r\n\r\n#user {\r\n  width: 20%;\r\n  height: 100%;\r\n  float: right;\r\n  padding: 10px;\r\n  text-align: right;\r\n  font-size: 1.25rem;\r\n}\r\n\r\n#logout {\r\n  color: white;\r\n  background-color: #b1a296;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n  margin-top: 10px;\r\n  font-size: 1.25rem;\r\n}\r\n\r\n.main {\r\n  top: 15%;\r\n  position: absolute;\r\n  display: flex;\r\n  width: 100%;\r\n  height: 85%;\r\n}\r\n\r\n.patients {\r\n  width: 280px;\r\n  height: 100%;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -133,7 +133,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".Graphs {\r\n  width: 80%;\r\n  height: 100%;\r\n}\r\n\r\n.graph {\r\n  height: 33.33%;\r\n  width: 100%;\r\n}\r\n\r\n#paw {\r\n  background-color: white;\r\n}\r\n\r\n#flow {\r\n  background-color: green;\r\n}\r\n\r\n#volume {\r\n  background-color: red;\r\n}\r\n", ""]);
+exports.push([module.i, ".Graphs {\r\n  width: 80%;\r\n  height: 100%;\r\n  min-width: 500px;\r\n}\r\n\r\n.graph {\r\n  height: 33.33%;\r\n  width: 100%;\r\n}\r\n\r\n#paw {\r\n  background-color: white;\r\n}\r\n\r\n#flow {\r\n  background-color: green;\r\n}\r\n\r\n#volume {\r\n  background-color: red;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -151,7 +151,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".PatientList {\r\n  width: 100%;\r\n  height: calc(100% - 50px);\r\n  background-color: #5d5c61;\r\n  overflow: auto;\r\n}\r\n\r\n.Patient {\r\n  height: 15%;\r\n  background-color: #557a95;\r\n  border: 2px solid #b1a296;\r\n  margin: 5px;\r\n  font-size: 1.5rem;\r\n  color: white;\r\n  padding: 5% 0;\r\n  border-radius: 10px;\r\n}\r\n\r\n.Patient:hover {\r\n  background-color: #5d5c61;\r\n  cursor: pointer;\r\n}\r\n", ""]);
+exports.push([module.i, ".PatientList {\r\n  width: 100%;\r\n  height: calc(100% - 50px);\r\n  background-color: #5d5c61;\r\n  overflow: auto;\r\n}\r\n\r\n.Patient {\r\n  height: 15%;\r\n  background-color: #7395ae;\r\n  border: 2px solid #b1a296;\r\n  margin: 5px;\r\n  font-size: 1.5rem;\r\n  color: white;\r\n  padding: 5% 0;\r\n  border-radius: 10px;\r\n}\r\n\r\n.Patient:hover {\r\n  background-color: #5d5c61;\r\n  cursor: pointer;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -169,7 +169,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".SearchBar {\r\n  width: 100%;\r\n  height: 50px;\r\n  padding: 5px 0;\r\n  background-color: #b1a296;\r\n}\r\n\r\n.SearchBar #search {\r\n  margin: 5px;\r\n  width: 60%;\r\n  font-size: 1.25rem;\r\n  font-size: 1.25rem;\r\n  border-radius: 5px;\r\n}\r\n\r\n.SearchBar button {\r\n  background-color: #7395ae;\r\n  color: white;\r\n  font-size: 1.25rem;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n}\r\n", ""]);
+exports.push([module.i, ".SearchBar {\r\n  width: 100%;\r\n  height: 50px;\r\n  padding: 5px 0;\r\n  background-color: #b1a296;\r\n}\r\n\r\n.SearchBar #search {\r\n  margin: 5px;\r\n  width: 60%;\r\n  font-size: 1.25rem;\r\n  border-radius: 5px;\r\n}\r\n\r\n.SearchBar button {\r\n  background-color: #7395ae;\r\n  color: white;\r\n  font-size: 1.25rem;\r\n  border-radius: 5px;\r\n  cursor: pointer;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -187,7 +187,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".TriggerSettings {\r\n  width: 20%;\r\n  height: 100%;\r\n}\r\n\r\n.Setting {\r\n  height: 14.285%;\r\n  width: 100%;\r\n  background-color: #7395ae;\r\n  color: white;\r\n  border: 2px solid #5d5c61;\r\n  display: flex;\r\n\r\n}\r\n\r\n#param {\r\n  display: flex;\r\n  font-size: 1.2rem;\r\n  width: 30%;\r\n  margin: 5px;\r\n}\r\n\r\n#bold {\r\n  font-weight: 600;\r\n  margin-right: 5px;\r\n}\r\n\r\n#value {\r\n  font-size: 3.5rem;\r\n  align-content: flex-end;\r\n  width: 70%;\r\n  margin: 5px;\r\n  text-align: right;\r\n}\r\n", ""]);
+exports.push([module.i, ".TriggerSettings {\r\n  width: 20%;\r\n  height: 100%;\r\n  min-width: 150px;\r\n  background-color: #5d5c61;\r\n}\r\n\r\n.Setting {\r\n  height: 14.285%;\r\n  width: 100%;\r\n  background-color: #7395ae;\r\n  color: white;\r\n  border: 2px solid #5d5c61;\r\n  display: flex;\r\n  border-radius: 5px;\r\n}\r\n\r\n#param {\r\n  display: flex;\r\n  font-size: 0.8rem;\r\n  width: 30%;\r\n  margin: 5px;\r\n}\r\n\r\n#bold {\r\n  font-weight: 600;\r\n  margin-right: 5px;\r\n}\r\n\r\n#value {\r\n  font-size: 3.5rem;\r\n  align-content: flex-end;\r\n  width: 70%;\r\n  margin: 5px;\r\n  text-align: right;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -205,7 +205,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\r\n.Ventilator-header {\r\n  position: absolute;\r\n  height: 50px;\r\n  width: calc(100% - 455px);\r\n  background-color: #b1a296;\r\n  text-align: left;\r\n  padding: 10px;\r\n  border-left: 2px dashed #5d5c61;\r\n}\r\n\r\n.Ventilator-content {\r\n  position: absolute;\r\n  height: calc(100% - 130px);\r\n  top: 50px;\r\n  display: flex;\r\n  width: calc(100% - 455px);\r\n}\r\n\r\n.Ventilator-footer {\r\n  top: calc(100% - 80px);\r\n  position: absolute;\r\n  height: 80px;\r\n  width: calc(100% - 455px);\r\n}\r\n", ""]);
+exports.push([module.i, ".section {\r\n  position: absolute;\r\n  width: calc(100% - 455px);\r\n  min-width: 700px;\r\n}\r\n\r\n.Ventilator-header {\r\n  height: 50px;\r\n  background-color: #b1a296;\r\n  text-align: left;\r\n  padding: 10px;\r\n  border-left: 2px dashed #5d5c61;\r\n  display: flex;\r\n  padding-left: 40px;\r\n}\r\n\r\n.info {\r\n  margin-right: 80px;\r\n  font-size: 1.8rem;\r\n  color: white;\r\n}\r\n\r\n.Ventilator-content {\r\n  height: calc(100% - 130px);\r\n  top: 50px;\r\n  display: flex;\r\n  min-height: 400px;\r\n}\r\n\r\n.Ventilator-footer {\r\n  top: calc(100% - 80px);\r\n  height: 80px;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -29201,30 +29201,130 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+var user = {
+  name: 'Dr. Max Mustermann'
+};
+var patients = [{
+  id: 1,
+  name: 'Josh',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 2,
+  name: 'Adam',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 3,
+  name: 'Claire Smith',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 4,
+  name: 'Stephanie',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 5,
+  name: 'Chloe',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 6,
+  name: 'Jack',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 7,
+  name: 'Lucy',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}, {
+  id: 8,
+  name: 'Hui',
+  mode: 'PC/AC',
+  timestamp: '03/04/2020'
+}];
 
 var App = /*#__PURE__*/function (_React$Component) {
   _inherits(App, _React$Component);
 
   var _super = _createSuper(App);
 
-  function App() {
+  function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      patient: null,
+      patientList: patients
+    };
+    _this.updateCurrentPatient = _this.updateCurrentPatient.bind(_assertThisInitialized(_this));
+    _this.updatePatientList = _this.updatePatientList.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(App, [{
+    key: "updatePatientList",
+    value: function updatePatientList(pattern) {
+      var newList = [];
+
+      if (pattern) {
+        patients.forEach(function (element) {
+          if (element.name.toLowerCase().includes(pattern.toLowerCase()) || element.id.toString().includes(pattern)) {
+            newList.push(element);
+          }
+        });
+      } else {
+        newList = patients;
+      }
+
+      this.setState({
+        patientList: newList
+      });
+    }
+  }, {
+    key: "updateCurrentPatient",
+    value: function updateCurrentPatient(id) {
+      var temp = null;
+      patients.forEach(function (element) {
+        if (element.id === id) {
+          temp = element;
+        }
+      });
+      this.setState({
+        patient: temp
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "App"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "header"
-      }, "Open-source Ventilator"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "logo"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "./logo.png"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Open-source Ventilator"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "user"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "logout"
+      }, "Log out"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "patients"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar_SearchBar__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PatientList_PatientList__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Ventilator_Ventilator__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Features_Features__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar_SearchBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        onSearch: this.updatePatientList
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PatientList_PatientList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        patients: this.state.patientList,
+        onClick: this.updateCurrentPatient
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Ventilator_Ventilator__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        patient: this.state.patient
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Features_Features__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
     }
   }]);
 
@@ -29489,41 +29589,48 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var arr = [{
-  name: 'Josh'
-}, {
-  name: 'Adam'
-}, {
-  name: 'Claire Smith'
-}, {
-  name: 'Stephanie'
-}, {
-  name: 'Chloe'
-}, {
-  name: 'Chloe'
-}, {
-  name: 'Chloe'
-}, {
-  name: 'Chloe'
-}];
 
 var PatientList = /*#__PURE__*/function (_React$Component) {
   _inherits(PatientList, _React$Component);
 
   var _super = _createSuper(PatientList);
 
-  function PatientList() {
+  function PatientList(props) {
+    var _this;
+
     _classCallCheck(this, PatientList);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      patient: null,
+      prevId: null
+    };
+    _this.handleClickEvent = _this.handleClickEvent.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PatientList, [{
+    key: "handleClickEvent",
+    value: function handleClickEvent(event) {
+      if (this.state.prevId !== null) {
+        document.getElementById(this.state.prevId).style.backgroundColor = "";
+      }
+
+      this.state.prevId = event.target.id;
+      this.props.onClick(Number(event.target.getAttribute('value')));
+      document.getElementById(event.target.id).style.backgroundColor = '#5d5c61';
+    }
+  }, {
     key: "render",
     value: function render() {
-      var patients = arr.map(function (patient) {
+      var _this2 = this;
+
+      var patients = this.props.patients.map(function (patient) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "Patient"
+          id: patient.id,
+          className: "Patient",
+          onClick: _this2.handleClickEvent,
+          value: patient.id
         }, patient.name);
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -29608,24 +29715,46 @@ var SearchBar = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(SearchBar);
 
-  function SearchBar() {
+  function SearchBar(props) {
+    var _this;
+
     _classCallCheck(this, SearchBar);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.handleSearch = _this.handleSearch.bind(_assertThisInitialized(_this));
+    _this.handleEnter = _this.handleEnter.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(SearchBar, [{
+    key: "handleSearch",
+    value: function handleSearch(event) {
+      var pattern = document.getElementById('search').value;
+      this.props.onSearch(pattern);
+    }
+  }, {
+    key: "handleEnter",
+    value: function handleEnter(event) {
+      if (event.keyCode === 13) {
+        this.handleSearch(event);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "SearchBar"
+        className: "SearchBar",
+        onKeyUp: this.handleEnter
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         name: "search",
         id: "search",
-        placeholder: "Patient name:"
+        placeholder: "Patient id/name:",
+        autoComplete: "off"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
+        type: "button",
+        id: "searchBtn",
+        onClick: this.handleSearch
       }, "Search"));
     }
   }]);
@@ -29705,27 +29834,27 @@ var arr = [{
   unit: '%',
   value: 10
 }, {
-  parameter: 'FiO2',
+  parameter: 'humidity',
   unit: '%',
   value: 10
 }, {
-  parameter: 'FiO2',
+  parameter: 'pressure_max',
   unit: '%',
   value: 10
 }, {
-  parameter: 'FiO2',
+  parameter: 'RR',
   unit: '%',
   value: 10
 }, {
-  parameter: 'FiO2',
+  parameter: 'VT',
   unit: '%',
   value: 10
 }, {
-  parameter: 'FiO2',
+  parameter: 'PEEP',
   unit: '%',
   value: 10
 }, {
-  parameter: 'FiO2',
+  parameter: 'IE',
   unit: '%',
   value: 10
 }];
@@ -29835,10 +29964,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var patient = {
-  mode: 'PC/AC',
-  time: '03/04/2020'
-};
 
 var Ventilator = /*#__PURE__*/function (_React$Component) {
   _inherits(Ventilator, _React$Component);
@@ -29854,14 +29979,21 @@ var Ventilator = /*#__PURE__*/function (_React$Component) {
   _createClass(Ventilator, [{
     key: "render",
     value: function render() {
+      var patient = this.props.patient;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Ventilator"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "Ventilator-header"
-      }, patient.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "Ventilator-content"
+        className: "Ventilator-header section"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info"
+      }, patient ? patient.name : '-'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info"
+      }, patient ? patient.timestamp : '-'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info"
+      }, "Mode: ", patient ? patient.mode : '-')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Ventilator-content section"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Graphs_Graphs__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TriggerSettings_TriggerSettings__WEBPACK_IMPORTED_MODULE_2__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "Ventilator-footer"
+        className: "Ventilator-footer section"
       }));
     }
   }]);
