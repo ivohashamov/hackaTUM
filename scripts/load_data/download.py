@@ -13,6 +13,7 @@ def download_jsons(link: str = None):
     webpage = urlopen(req, context=context).read()
     # utf-8
     webpage = webpage.decode('unicode_escape').encode('latin-1').decode('utf8')
+    webpage = webpage.lower()
     # create dictionaries
     ventilators = []
     d = {}
