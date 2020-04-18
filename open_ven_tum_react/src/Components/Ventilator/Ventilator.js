@@ -17,7 +17,7 @@ class Ventilator extends React.Component {
         <div className="Ventilator-header section">
           <div className="info">{patient ? patient.name : '-'}</div>
           <div className="info">Last Update: {patient ? patient.timestamp : '-'}</div>
-          <div className="info">Mode: {patient ? patient.mode : '-'}</div>
+          <div className="info">Mode: {patient ? patient.processedParameters.ventMode : '-'}</div>
         </div>
         <div className="Ventilator-content section">
           {patient ? <Graphs /> : placeholder}

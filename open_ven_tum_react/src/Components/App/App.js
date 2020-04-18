@@ -65,7 +65,6 @@ const settings = [{
 const patients = [{
   id: 1,
   name: 'Josh',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -73,7 +72,6 @@ const patients = [{
 {
   id: 2,
   name: 'Alexander von Huboldt',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -81,7 +79,6 @@ const patients = [{
 {
   id: 3,
   name: 'Claire Smith',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -89,7 +86,6 @@ const patients = [{
 {
   id: 4,
   name: 'Stephanie',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -97,7 +93,6 @@ const patients = [{
 {
   id: 5,
   name: 'Chloe',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -105,7 +100,6 @@ const patients = [{
 {
   id: 6,
   name: 'Jack',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -113,7 +107,6 @@ const patients = [{
 {
   id: 7,
   name: 'Lucy',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
@@ -121,7 +114,6 @@ const patients = [{
 {
   id: 8,
   name: 'Hui',
-  mode: 'PC/AC',
   timestamp: '03/04/2020',
   triggerSettings: settings,
   processedParameters: processedParameters
