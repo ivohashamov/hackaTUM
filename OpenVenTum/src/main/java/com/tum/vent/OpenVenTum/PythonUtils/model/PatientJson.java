@@ -1,6 +1,6 @@
 package com.tum.vent.OpenVenTum.PythonUtils.model;
 
-public class Patient {
+public class PatientJson {
     private  int p_id;
     private  String name;
     private  int doc_id;
