@@ -77,7 +77,7 @@ public class DeserializeTest {
 
     @Test
     public void runCommandAndDeserialize() throws IOException, InterruptedException {
-        String jsonArr = PythonRunner.runCommand( "2");
+        String jsonArr = PythonRunner.readInfoForPatient( "2");
         VentilatorDataJson[] jsons = des.deserializeVentilatorDataArr(jsonArr);
         for (VentilatorDataJson json : jsons)
             assertionSet(json);
