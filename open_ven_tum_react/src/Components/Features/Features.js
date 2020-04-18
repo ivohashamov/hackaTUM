@@ -5,6 +5,12 @@ class Features extends React.Component {
   render() {
     return (
       <div className="Features">
+        <div className="feature-header">
+          Features
+        </div>
+        <div className="feature-container">
+          
+        </div>
       </div>
     )
   }
