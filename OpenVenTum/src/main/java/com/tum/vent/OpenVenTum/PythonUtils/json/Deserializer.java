@@ -15,4 +15,8 @@ public class Deserializer {
         VentilatorDataJson ventdata= mapper.readValue(jsonString, VentilatorDataJson.class);
         return ventdata;
     }
+    public VentilatorDataJson[] deserializeVentilatorDataArr(String jsonString) throws JsonProcessingException {
+        VentilatorDataJson ventdata[]= mapper.readValue(jsonString, VentilatorDataJson[].class);
+        return ventdata;
+    }
 }
