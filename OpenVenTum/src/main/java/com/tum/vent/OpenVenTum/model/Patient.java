@@ -10,16 +10,20 @@ import java.util.Objects;
 @Entity
 public class Patient{
     private @Id @NotNull
-    @GeneratedValue
     Integer id;
     @NotNull
-    private final String name;
-    private @ManyToOne Doctor doctor;
+    private  String name;
+    private int doc_Id;
     private String notes;
 
-    public Patient(String name, Doctor doctor){
+
+    public Patient(){
+
+    }
+    public Patient(Integer id,String name,int doc_Id){
+        this.id=id;
         this.name = name;
-        this.doctor= doctor;
+        this.doc_Id=doc_Id;
         this.notes="";
     }
 
@@ -31,12 +35,13 @@ public class Patient{
         return id;
     }
 
-    public Doctor getDoctor() {
-        return doctor;
+
+    public int getDoc_Id() {
+        return doc_Id;
     }
 
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
+    public void setDoc_Id(int doc_Id) {
+        this.doc_Id = doc_Id;
     }
 
     public String getNotes() {
@@ -52,7 +57,7 @@ public class Patient{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Patient patient = (Patient) o;
-        return this.doctor.getId() == patient.doctor.getId() &&
+        return this.doc_Id == patient.getDoc_Id() &&
                 Objects.equals(id, patient.id) &&
                 Objects.equals(name, patient.name);
     }
@@ -62,12 +67,12 @@ public class Patient{
         return "Patient{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", doc_id=" + doctor.getId() +
+                ", doc_id=" + doc_Id +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, doctor);
+        return Objects.hash(id, name, doc_Id);
     }
 }

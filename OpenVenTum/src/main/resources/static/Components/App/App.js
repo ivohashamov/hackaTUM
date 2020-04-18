@@ -7,6 +7,7 @@ import Features from '../Features/Features';
 import Header from '../Header/Header';
 import LogIn from '../LogIn/LogIn';
 import Register from '../Register/Register';
+import client from '../client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const user = {
@@ -49,70 +50,13 @@ const settings = [{
   value: 10
 }];
 
-const patients = [{
-  id: 1,
-  name: 'Josh',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 2,
-  name: 'Adam',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 3,
-  name: 'Claire Smith',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 4,
-  name: 'Stephanie',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 5,
-  name: 'Chloe',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 6,
-  name: 'Jack',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 7,
-  name: 'Lucy',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-},
-{
-  id: 8,
-  name: 'Hui',
-  mode: 'PC/AC',
-  timestamp: '03/04/2020',
-  triggerSettings: settings
-}]
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       page: 'ventilator',
       patient: null,
-      patientList: patients
+      patientList: []
     }
     this.updateCurrentPatient = this.updateCurrentPatient.bind(this);
     this.updatePatientList = this.updatePatientList.bind(this);
@@ -121,9 +65,10 @@ class App extends React.Component {
   updatePatientList(pattern) {
     let newList = [];
     if (pattern) {
-      patients.forEach(element => {
+      patientList.forEach(element => {
+        let id=element._links.self.href.substr(element._links.self.href.lastIndexOf("/") + 1);
         if (element.name.toLowerCase().includes(pattern.toLowerCase())
-            || element.id.toString().includes(pattern)) {
+            || id.toString().includes(pattern)) {
           newList.push(element);
         }
       });
@@ -136,10 +81,18 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount() { // <2>
+    client({method: 'GET', path: '/api/patients'}).done(response => {
+      this.setState({patientList: response.entity._embedded.patients});
+    });
+
+  }
+
   updateCurrentPatient(id) {
     let temp = null;
-    patients.forEach(element => {
-      if (element.id === id) {
+    patientList.forEach(element => {
+      let elid=element._links.self.href.substr(element._links.self.href.lastIndexOf("/") + 1);
+      if (elid === id) {
         temp = element;
       }
     });
@@ -183,13 +136,14 @@ class App extends React.Component {
             </div>
             <div className="main">
               <div className="patients">
-                <SearchBar onSearch={this.updatePatientList}/>
+                <SearchBar patients={this.state.patientList} onSearch={this.updatePatientList}/>
                 <PatientList patients={this.state.patientList}
                    onClick={this.updateCurrentPatient}/>
               </div>
               <Ventilator patient={this.state.patient}/>
               <Features />
             </div>
+
           </div>
         );
         break;

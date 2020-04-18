@@ -1,3 +1,33 @@
 .Features {
-  width: 175px;
+  position: absolute;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background-color: #b1a296;
+  z-index: 2;
+}
+
+.feature-header {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.8rem;
+}
+
+.feature-container {
+  border-top: 2px dashed #5d5c61;
+  height: 50%;
+}
+
+.free-ventilators button {
+  margin: 20px auto;
+  background-color: #7395ae;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.textfield {
+  background-color: #5d5c61;
 }

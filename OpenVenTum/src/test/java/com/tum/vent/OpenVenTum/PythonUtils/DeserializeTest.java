@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tum.vent.OpenVenTum.PythonUtils.json.Deserializer;
 import com.tum.vent.OpenVenTum.PythonUtils.model.VentilatorDataJson;
-import com.tum.vent.OpenVenTum.PythonUtils.model.Patient;
+import com.tum.vent.OpenVenTum.PythonUtils.model.PatientJson;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
@@ -90,6 +90,6 @@ public class DeserializeTest {
     @Test
     public void retrievePatientsAndDeserialize() throws IOException {
         String jsonArr = PythonRunner.retrieve_patients("10");
-        Patient[] patients = des.deserializePatientArray(jsonArr);
+        PatientJson[] patients = des.deserializePatientArray(jsonArr);
     }
 }
