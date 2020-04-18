@@ -8,8 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DatabaseLoader implements CommandLineRunner {
+    @Override
+    public void run(String... args) throws Exception {
 
-    private final DoctorRepository repository;
+    }
+
+    /*private final DoctorRepository repository;
 
     @Autowired
     public DatabaseLoader(DoctorRepository rep){
@@ -18,5 +22,5 @@ public class DatabaseLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         this.repository.save(new Doctor(args[0]));
-    }
+    }*/
 }
