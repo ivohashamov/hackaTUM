@@ -1,5 +1,5 @@
 from sklearn.cluster import KMeans
-from tinydb import TinyDB
+from tinydb import TinyDB, Query
 import argparse as ap
 parser = ap.ArgumentParser()
 parser.add_argument('--v', required=True, type=int)
@@ -30,13 +30,23 @@ def cluster_reades(num_of_vent):
             clusters[num] = [*clusters[num], list_with_id[i]]
         else:
             clusters[num] = [list_with_id[i]]
-    return [unit for unit in clusters.values() if len(unit) >= 2]
+    cl = [unit for unit in clusters.values() if len(unit) >= 2]
+    db = TinyDB('scripts/DB/patient_data_base.json', default_table='patients')
+    query = Query()
+    final_pair_ids_of_patients = []
+    final_ids_of_patients = []
+    for pair in cl:
+        for i in pair:
+            final_ids_of_patients.append(db.search(query.vent == i)[0]['p_id'])
+        final_pair_ids_of_patients.append(final_ids_of_patients)
+        final_ids_of_patients = []
+    db.close()
+    return final_pair_ids_of_patients
 
 
 def cluster(c: int, info):
     model = KMeans(n_clusters=c)
     prediction = model.fit_predict(info)
     return prediction
-
 
 print(cluster_reades(v))
