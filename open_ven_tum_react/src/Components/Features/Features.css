@@ -12,11 +12,28 @@
   width: 100%;
   padding: 10px;
   font-size: 1.8rem;
+  background-color:#5d5c61;
 }
 
 .feature-container {
   border-top: 2px dashed #5d5c61;
   height: 50%;
+}
+
+.update-interval {
+  margin: 20px auto;
+  font-size: 1.4rem;
+}
+
+select {
+  display: inline-block;
+  width: auto;
+  background-color: #7395ae;
+  border: 2px solid white;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
 }
 
 .free-ventilators button {

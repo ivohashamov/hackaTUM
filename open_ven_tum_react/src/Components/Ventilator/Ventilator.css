@@ -12,11 +12,12 @@
   border-left: 2px dashed #5d5c61;
   border-right: 2px dashed #5d5c61;
   display: flex;
-  padding-left: 40px;
+  justify-content: space-around;
+  padding-left: 20px;
 }
 
 .info {
-  margin-right: 80px;
+  margin-right: 20px;
   font-size: 1.8rem;
   color: white;
 }
@@ -51,5 +52,19 @@
   top: calc(100% - 80px);
   height: 80px;
   background-color: #b1a296;
+  border-left: 2px dashed #5d5c61;
   border-right: 2px dashed #5d5c61;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-info {
+  border: 2px solid white;
+  margin: 15px auto;
+  border-radius: 5px;
+  background-color: #7395ae;
+  padding: 5px;
+  width: 180px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }

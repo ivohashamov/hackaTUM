@@ -4,37 +4,37 @@ import './TriggerSettings.css';
 const defaultSettings = [{
   parameter: 'FiO2',
   unit: '%',
-  value: '-'
+  value: '0'
 },
 {
   parameter: 'humidity',
   unit: '%',
-  value: '-'
+  value: '0'
 },
 {
   parameter: 'pressure_max',
   unit: '%',
-  value: '-'
+  value: '0'
 },
 {
   parameter: 'RR',
   unit: '%',
-  value: '-'
+  value: '0'
 },
 {
   parameter: 'VT',
   unit: '%',
-  value: '-'
+  value: '0'
 },
 {
   parameter: 'PEEP',
   unit: '%',
-  value: '-'
+  value: '0'
 },
 {
   parameter: 'IE',
   unit: '%',
-  value: '-'
+  value: '0'
 }];
 
 class TriggerSettings extends React.Component {

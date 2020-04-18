@@ -16,14 +16,18 @@ class Ventilator extends React.Component {
       <div className="Ventilator">
         <div className="Ventilator-header section">
           <div className="info">{patient ? patient.name : '-'}</div>
-          <div className="info">{patient ? patient.timestamp : '-'}</div>
-          <div className="info">Mode: {patient ? patient.mode : '-'}</div>
+          <div className="info">Last Update: {patient ? patient.timestamp : '-'}</div>
+          <div className="info">Mode: {patient ? patient.processedParameters.ventMode : '-'}</div>
         </div>
         <div className="Ventilator-content section">
           {patient ? <Graphs /> : placeholder}
           <TriggerSettings settings={patient ? patient.triggerSettings : null}/>
         </div>
         <div className="Ventilator-footer section">
+          <div className="footer-info">vPM: {patient ? patient.processedParameters.vPM : '0'}mL</div>
+          <div className="footer-info">frq: {patient ? patient.processedParameters.frq : '0'}/min</div>
+          <div className="footer-info">Exp. CO2: {patient ? patient.processedParameters.expCO2 : '0'}%</div>
+          <div className="footer-info">Exp. O2: {patient ? patient.processedParameters.expO2 : '0'}%</div>
         </div>
       </div>
     );
