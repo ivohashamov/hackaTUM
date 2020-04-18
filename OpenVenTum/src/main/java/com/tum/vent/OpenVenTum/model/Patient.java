@@ -3,6 +3,7 @@ package com.tum.vent.OpenVenTum.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
@@ -13,11 +14,11 @@ public class Patient{
     Integer id;
     @NotNull
     private final String name;
-    private final int doc_id;
+    private @ManyToOne Doctor doctor;
 
-    public Patient(String name, int doc_id){
+    public Patient(String name, Doctor doctor){
         this.name = name;
-        this.doc_id= doc_id;
+        this.doctor= doctor;
     }
 
     public String getName() {
@@ -28,8 +29,12 @@ public class Patient{
         return id;
     }
 
-    public int getDoc_id() {
-        return doc_id;
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
     @Override
@@ -37,7 +42,7 @@ public class Patient{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Patient patient = (Patient) o;
-        return doc_id == patient.doc_id &&
+        return this.doctor.getId() == patient.doctor.getId() &&
                 Objects.equals(id, patient.id) &&
                 Objects.equals(name, patient.name);
     }
@@ -47,12 +52,12 @@ public class Patient{
         return "Patient{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", doc_id=" + doc_id +
+                ", doc_id=" + doctor.getId() +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, doc_id);
+        return Objects.hash(id, name, doctor);
     }
 }

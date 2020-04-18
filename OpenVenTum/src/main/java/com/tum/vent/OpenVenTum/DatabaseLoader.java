@@ -8,6 +8,9 @@ public class DatabaseLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        //request all patients from the database
+
+
     }
 
 }
