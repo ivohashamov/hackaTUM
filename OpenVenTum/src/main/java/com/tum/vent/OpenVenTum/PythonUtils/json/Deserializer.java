@@ -2,7 +2,7 @@ package com.tum.vent.OpenVenTum.PythonUtils.json;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tum.vent.OpenVenTum.PythonUtils.model.Patient;
+import com.tum.vent.OpenVenTum.PythonUtils.model.PatientJson;
 import com.tum.vent.OpenVenTum.PythonUtils.model.VentilatorDataJson;
 
 public class Deserializer {
@@ -20,12 +20,14 @@ public class Deserializer {
         VentilatorDataJson ventdata[]= mapper.readValue(jsonString, VentilatorDataJson[].class);
         return ventdata;
     }
-    public Patient deserializePatient(String jsonString) throws JsonProcessingException {
-        Patient patient = mapper.readValue(jsonString, Patient.class);
+    public PatientJson deserializePatient(String jsonString) throws JsonProcessingException {
+        PatientJson patient = mapper.readValue(jsonString, PatientJson.class);
         return patient;
     }
-    public Patient[] deserializePatientArray(String jsonString) throws JsonProcessingException {
-        Patient[] patients = mapper.readValue(jsonString, Patient[].class);
+    public PatientJson[] deserializePatientArray(String jsonString) throws JsonProcessingException {
+        PatientJson[] patients = mapper.readValue(jsonString, PatientJson[].class);
         return patients;
     }
+
+
 }

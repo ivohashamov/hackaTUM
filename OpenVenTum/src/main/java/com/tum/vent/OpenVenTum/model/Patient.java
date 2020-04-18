@@ -15,10 +15,12 @@ public class Patient{
     @NotNull
     private final String name;
     private @ManyToOne Doctor doctor;
+    private String notes;
 
     public Patient(String name, Doctor doctor){
         this.name = name;
         this.doctor= doctor;
+        this.notes="";
     }
 
     public String getName() {
@@ -35,6 +37,14 @@ public class Patient{
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     @Override
