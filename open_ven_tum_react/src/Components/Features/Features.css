@@ -16,4 +16,18 @@
 
 .feature-container {
   border-top: 2px dashed #5d5c61;
+  height: 50%;
+}
+
+.free-ventilators button {
+  margin: 20px auto;
+  background-color: #7395ae;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.textfield {
+  background-color: #5d5c61;
 }
