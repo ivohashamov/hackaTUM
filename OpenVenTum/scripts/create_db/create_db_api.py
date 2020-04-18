@@ -1,7 +1,8 @@
-from download import download_jsons
 from tinydb import TinyDB
 import time
 import os
+from download import download_jsons
+
 
 def create_table_api():
     # check if table exist

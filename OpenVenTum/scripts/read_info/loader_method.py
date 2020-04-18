@@ -1,5 +1,5 @@
 from tinydb import TinyDB, Query
-from read_info.find_patient_vent import load_vent_id
+from find_patient_vent import load_vent_id
 import os
 def load_data(p_id: str ,num_to_cut: str=10, cut: bool=False):
     db = TinyDB(os.getcwd() + '/scripts/DB/api_data_base.json', default_table='ventilators_data')
