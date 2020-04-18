@@ -21,6 +21,8 @@ def create_doctor(name: str, doc_id: str):
     # insert only if no id match
     if len(info_for_given_patient) == 0:
         db.insert(unit)
+    db.close()
+
 
 
 create_doctor(name, doc_id)

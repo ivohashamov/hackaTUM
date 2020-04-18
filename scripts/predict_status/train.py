@@ -34,6 +34,7 @@ def data_to_train():
     print(model.score(X_test, y_test))
     """
     dump(model, 'scripts/data/model_random_data.joblib')
+    db.close()
 
 
 

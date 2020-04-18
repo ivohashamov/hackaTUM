@@ -1,8 +1,8 @@
 from tinydb import TinyDB, Query
 from find_patient_vent import load_vent_id
-
+import os
 def load_data(p_id: str ,num_to_cut: str=10, cut: bool=False):
-    db = TinyDB('scripts/DB/api_data_base.json', default_table='ventilators_data')
+    db = TinyDB(os.getcwd() + 'scripts/DB/api_data_base.json', default_table='ventilators_data')
     query = Query()
     info_for_given_patient = db.search(query.data_id == load_vent_id(p_id))
     db.close()
