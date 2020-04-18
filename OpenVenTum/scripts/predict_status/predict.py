@@ -1,9 +1,11 @@
 from joblib import load
-from loader_method import load_data
-from loader_method import retrieve_patiens_for_gicen_doctor
-from train import myhash
+
+
 import argparse as ap
 import os
+from loader_method import load_data, retrieve_patiens_for_gicen_doctor
+from train_model import myhash
+
 parser = ap.ArgumentParser()
 parser.add_argument('--doc_id', required=True, type=str)
 args = parser.parse_args()
