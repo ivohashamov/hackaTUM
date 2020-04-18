@@ -7,32 +7,32 @@ const arr = [{
   value: 10
 },
 {
-  parameter: 'FiO2',
+  parameter: 'humidity',
   unit: '%',
   value: 10
 },
 {
-  parameter: 'FiO2',
+  parameter: 'pressure_max',
   unit: '%',
   value: 10
 },
 {
-  parameter: 'FiO2',
+  parameter: 'RR',
   unit: '%',
   value: 10
 },
 {
-  parameter: 'FiO2',
+  parameter: 'VT',
   unit: '%',
   value: 10
 },
 {
-  parameter: 'FiO2',
+  parameter: 'PEEP',
   unit: '%',
   value: 10
 },
 {
-  parameter: 'FiO2',
+  parameter: 'IE',
   unit: '%',
   value: 10
 }];
