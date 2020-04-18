@@ -41,3 +41,10 @@ def filter_dict(d: dict):
     d['pressure_max'] = d['pressure_max'][-1]
     d['ventilationMode'] = d['ventilationMode'][-1]
     return d
+
+def retrieve_patiens_for_gicen_doctor(doc_id: str):
+    db = TinyDB('scripts/DB/patient_data_base.json', default_table='patients')
+    query = Query()
+    info_for_patients_of_dictor = db.search(query.doc_id == doc_id)
+    db.close()
+    return info_for_patients_of_dictor
