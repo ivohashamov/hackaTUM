@@ -1,5 +1,6 @@
 from tinydb import TinyDB, Query
 import argparse as ap
+import os
 parser = ap.ArgumentParser()
 parser.add_argument('--name', required=True, type=str)
 parser.add_argument('--p_id', required=True, type=str)
@@ -15,7 +16,7 @@ vent = args.vent
 
 
 def create_patient(p_id: int, name: str, doc_id, vent: str):
-    db = TinyDB('scripts/DB/patient_data_base.json', default_table='patients')
+    db = TinyDB(os.getcwd() + '/scripts/DB/patient_data_base.json', default_table='patients')
     query = Query()
 
     # check if patient with this id exist

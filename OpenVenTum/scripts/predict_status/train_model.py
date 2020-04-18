@@ -3,7 +3,7 @@ import random
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from joblib import dump
-
+import os
 def myhash(obj):
     try:
         return sum([ord(char) for char in obj])
@@ -11,7 +11,7 @@ def myhash(obj):
         return float(obj)
 
 def data_to_train():
-    db = TinyDB('scripts/DB/api_data_base.json', default_table='ventilators_data')
+    db = TinyDB(os.getcwd() + '/scripts/DB/api_data_base.json', default_table='ventilators_data')
     all_data = db.all()
     normal_status_X = all_data
     normal_status_y = [1 for i in range(len(normal_status_X))]

@@ -70,9 +70,9 @@ public class VentilatorData {
         return ventilator;
     }
 
+
     public void setVentilator(Ventilator ventilator) {
         this.ventilator = ventilator;
     }
-
 
 }
