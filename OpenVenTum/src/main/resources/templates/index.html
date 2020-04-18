@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Spring and KeyLines together!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/fonts.css" />
+    <script type="text/javascript" src="js/keylines.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+</head>
+<body>
+<h1> Spring and KeyLines together!</h1>
+<div id="kl" style="width: 650px; height: 400px;" ></div>
+<script type="text/javascript">
+    var chart;
+
+    $(window).load(function(){
+      // let KeyLines decide which renderer fits better
+      KeyLines.mode(‘auto’);
+
+      KeyLines.paths({ assets: ‘/assets/’});
+
+      // pass the callback to be called when the creation will be completed
+      KeyLines.create(‘kl’, chartLoaded);
+    });
+
+    function chartLoaded(err, newChart){
+      chart = newChart;
+
+      // from here on you can use the KeyLines chart component. getData is a function in js/data.js file, but could also be a call to web server.
+      chart.load(getData());
+    }
+
+    </script>
+</body>
+</html>

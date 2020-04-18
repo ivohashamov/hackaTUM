@@ -95,6 +95,11 @@ public class VentilatorData {
          */
         private  float expiredCO2;
 
+        public Processed(float volumePerMovement, float frequency) {
+            this.volumePerMovement = volumePerMovement;
+            this.frequency = frequency;
+        }
+
         public float getVolumePerMovement() {
             return volumePerMovement;
         }
