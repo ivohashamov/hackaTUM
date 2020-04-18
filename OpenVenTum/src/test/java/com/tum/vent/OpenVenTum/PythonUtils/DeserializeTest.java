@@ -8,7 +8,6 @@ import com.tum.vent.OpenVenTum.PythonUtils.json.Deserializer;
 import com.tum.vent.OpenVenTum.PythonUtils.model.VentilatorDataJson;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.util.Assert;
 
 import java.io.IOException;
@@ -27,12 +26,16 @@ public class DeserializeTest {
          is = getClass().getClassLoader().getResourceAsStream("appDataArray.json");
          bytes = is.readAllBytes();
         jsonArray = new String(bytes);
-         des = new Deserializer(new ObjectMapper());
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES,true);
+        des = new Deserializer(mapper);
     }
 
     @Test
     public void deserialize() throws JsonProcessingException {
-        VentilatorDataJson ventData = new ObjectMapper().readValue(json, VentilatorDataJson.class);
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES,true);
+        VentilatorDataJson ventData = mapper.readValue(json, VentilatorDataJson.class);
         assertionSet(ventData);
     }
 
@@ -43,7 +46,7 @@ public class DeserializeTest {
     }
     private void assertionSet(VentilatorDataJson ventData){
         Assert.notNull(ventData, "Object was null.");
-        Assert.notNull(ventData.getAngleSensor());
+        Assert.notNull(ventData.getAnglesensor());
         Assert.notNull(ventData.getCO2());
         Assert.notNull(ventData.getCurrent());
         Assert.notNull(ventData.getData_id());
@@ -61,7 +64,7 @@ public class DeserializeTest {
     public void deserializeJsonArray() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES,true);
-        VentilatorDataJson[] jsons = new ObjectMapper().readValue(jsonArray, VentilatorDataJson[].class);
+        VentilatorDataJson[] jsons = mapper.readValue(jsonArray, VentilatorDataJson[].class);
         for (VentilatorDataJson json : jsons)
             assertionSet(json);
     }

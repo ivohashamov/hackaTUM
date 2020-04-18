@@ -10,21 +10,16 @@ private    static String command = "python3 "+ path + "\\scripts\\read_info\\rea
 
     public static String runCommand(String args) throws IOException, InterruptedException {
         command += args;
-        command = command.replace("\\OpenVenTum", "");
         Process p = Runtime.getRuntime().exec(command);
-        while (p.isAlive()) {}
 
         BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8));
-        BufferedReader br1 = new BufferedReader(new InputStreamReader(p.getErrorStream(), StandardCharsets.UTF_8));
         String s = null;
         String json = "";
-        while ((s = br1.readLine()) != null) {
-            System.out.println(s);
-        }
         while ((s = br.readLine()) != null) {
             System.out.println(s);
             json += s + '\n';
         }
-        return s;
+        json = json.replace('\'', '"');
+        return json;
     }
 }

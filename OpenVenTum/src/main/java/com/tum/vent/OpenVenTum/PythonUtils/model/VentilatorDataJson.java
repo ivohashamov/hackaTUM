@@ -5,27 +5,27 @@ package com.tum.vent.OpenVenTum.PythonUtils.model;
 public class VentilatorDataJson {
     private String data_id;
     private int device_id;
-    private float ExpiredCO2;
-    private float ExpiredO2;
-    private float MVe;
+    private float expiredco2;
+    private float expiredo2;
+    private float mve;
     private float flowrate;
     private float frequency;
     private float pressure;
-    private float FiO2;
-    private float IE;
-    private float PEEP;
-    private float RR;
-    private float VT;
+    private float fio2;
+    private float ie;
+    private float peep;
+    private float rr;
+    private float vt;
     private float humidity;
     private float pressure_max;
-    private String ventilationMode;
-    private float volumePerMinute;
-    private float volumePerMovement;
-    private float CO2;
-    private float O2;
-    private float angleSensor;
+    private String ventilationmode;
+    private float volumeperminute;
+    private float volumepermovement;
+    private float co2;
+    private float o2;
+    private float anglesensor;
     private float current;
-    private float motorRPM;
+    private float motorrpm;
     private float pressure1;
     private float pressure2;
     private float temperature1;
@@ -44,15 +44,15 @@ public class VentilatorDataJson {
     }
 
     public float getExpiredCO2() {
-        return ExpiredCO2;
+        return expiredco2;
     }
 
     public float getExpiredO2() {
-        return ExpiredO2;
+        return expiredo2;
     }
 
     public float getMVe() {
-        return MVe;
+        return mve;
     }
 
     public float getFlowrate() {
@@ -68,23 +68,23 @@ public class VentilatorDataJson {
     }
 
     public float getFiO2() {
-        return FiO2;
+        return fio2;
     }
 
     public float getIE() {
-        return IE;
+        return ie;
     }
 
     public float getPEEP() {
-        return PEEP;
+        return peep;
     }
 
     public float getRR() {
-        return RR;
+        return rr;
     }
 
     public float getVT() {
-        return VT;
+        return vt;
     }
 
     public float getHumidity() {
@@ -95,28 +95,28 @@ public class VentilatorDataJson {
         return pressure_max;
     }
 
-    public String getVentilationMode() {
-        return ventilationMode;
+    public String getVentilationmode() {
+        return ventilationmode;
     }
 
-    public float getVolumePerMinute() {
-        return volumePerMinute;
+    public float getVolumeperminute() {
+        return volumeperminute;
     }
 
-    public float getVolumePerMovement() {
-        return volumePerMovement;
+    public float getVolumepermovement() {
+        return volumepermovement;
     }
 
     public float getCO2() {
-        return CO2;
+        return co2;
     }
 
     public float getO2() {
-        return O2;
+        return o2;
     }
 
-    public float getAngleSensor() {
-        return angleSensor;
+    public float getAnglesensor() {
+        return anglesensor;
     }
 
     public float getCurrent() {
@@ -124,7 +124,7 @@ public class VentilatorDataJson {
     }
 
     public float getMotorRPM() {
-        return motorRPM;
+        return motorrpm;
     }
 
     public float getPressure1() {
@@ -158,15 +158,15 @@ public class VentilatorDataJson {
     }
 
     public void setExpiredCO2(float ExpiredCO2) {
-        this.ExpiredCO2 = ExpiredCO2;
+        this.expiredco2 = ExpiredCO2;
     }
 
     public void setExpiredO2(float ExpiredO2) {
-        this.ExpiredO2 = ExpiredO2;
+        this.expiredo2 = ExpiredO2;
     }
 
-    public void setMVe(float MVe) {
-        this.MVe = MVe;
+    public void setMVe(float mve) {
+        this.mve = mve;
     }
 
     public void setFlowrate(float flowrate) {
@@ -181,24 +181,24 @@ public class VentilatorDataJson {
         this.pressure = pressure;
     }
 
-    public void setFiO2(float FiO2) {
-        this.FiO2 = FiO2;
+    public void setFiO2(float fio2) {
+        this.fio2 = fio2;
     }
 
-    public void setIE(float IE) {
-        this.IE = IE;
+    public void setIE(float ie) {
+        this.ie = ie;
     }
 
-    public void setPEEP(float PEEP) {
-        this.PEEP = PEEP;
+    public void setPEEP(float peep) {
+        this.peep = peep;
     }
 
-    public void setRR(float RR) {
-        this.RR = RR;
+    public void setRR(float rr) {
+        this.rr = rr;
     }
 
-    public void setVT(float VT) {
-        this.VT = VT;
+    public void setVT(float vt) {
+        this.vt = vt;
     }
 
     public void setHumidity(float humidity) {
@@ -209,28 +209,28 @@ public class VentilatorDataJson {
         this.pressure_max = pressure_max;
     }
 
-    public void setVentilationMode(String ventilationMode) {
-        this.ventilationMode = ventilationMode;
+    public void setVentilationmode(String ventilationmode) {
+        this.ventilationmode = ventilationmode;
     }
 
-    public void setVolumePerMinute(float volumePerMinute) {
-        this.volumePerMinute = volumePerMinute;
+    public void setVolumeperminute(float volumeperminute) {
+        this.volumeperminute = volumeperminute;
     }
 
-    public void setVolumePerMovement(float volumePerMovement) {
-        this.volumePerMovement = volumePerMovement;
+    public void setVolumepermovement(float volumepermovement) {
+        this.volumepermovement = volumepermovement;
     }
 
-    public void setCO2(float CO2) {
-        this.CO2 = CO2;
+    public void setCO2(float co2) {
+        this.co2 = co2;
     }
 
-    public void setO2(float O2) {
-        this.O2 = O2;
+    public void setO2(float o2) {
+        this.o2 = o2;
     }
 
-    public void setAngleSensor(float angleSensor) {
-        this.angleSensor = angleSensor;
+    public void setAnglesensor(float anglesensor) {
+        this.anglesensor = anglesensor;
     }
 
     public void setCurrent(float current) {
@@ -238,7 +238,7 @@ public class VentilatorDataJson {
     }
 
     public void setMotorRPM(float motorRPM) {
-        this.motorRPM = motorRPM;
+        this.motorrpm = motorRPM;
     }
 
     public void setPressure1(float pressure1) {
