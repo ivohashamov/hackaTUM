@@ -13,7 +13,7 @@ public class PythonRunner {
     private static final String create_doctor = "python3 " + path +"\\scripts\\create_db\\create_doctor.py --doc_id ";
     private static final String create_patient = "python3 " + path + "\\scripts\\create_db\\create_patient.py --p_id ";
     private static final String create_db_api = "python3 " + path + "\\scripts\\create_db\\create_db_api.py ";
-    private static final String retrieve_patients = "python3 " + path + "\\scripts\\read_info\\retrieve_patients.py ";
+    private static final String retrieve_patients = "python3 " + path + "\\scripts\\read_info\\retrieve_patients.py --doc_id ";
 
 
     private static String runCommand(String command, String... args) throws IOException {
