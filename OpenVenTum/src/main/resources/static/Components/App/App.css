@@ -1,28 +1,77 @@
 .App {
   text-align: center;
   font-family: "Work Sans", sans-serif;
-}
-
-.App h1 {
-  font-weight: 600;
-}
-
-.App #header {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   background-color: #7395ae;
   color: white;
-  height: 15%;
+  z-index: 0;
+}
+
+/* Index page */
+
+
+/* Ventilator page */
+
+#header {
+  position: absolute;
+  height: 150px;
   width: 100%;
-  padding: 15px;
+  display: flex;
+  border: 3px solid black;
+}
+
+#logo {
+  width: 10%;
+}
+
+#logo img {
+  width: auto;
+  height: 85%;
+  float: left;
+  align-content: center;
+  margin: 10px;
+}
+
+h1 {
+  font-weight: 600;
+  min-width: 900px;
+  padding: 30px;
   font-size: 4rem;
+  width: 70%;
+}
+
+
+#user {
+  width: 20%;
+  height: 100%;
+  float: right;
+  padding: 10px;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+#logout {
+  color: white;
+  background-color: #b1a296;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1.25rem;
+}
+
+#logout:hover {
+  background-color: #5d5c61;
 }
 
 .main {
-  top: 15%;
+  top: 150px;
   position: absolute;
   display: flex;
   width: 100%;
-  height: 85%;
+  height: calc(100% - 150px);
 }
 
 .patients {

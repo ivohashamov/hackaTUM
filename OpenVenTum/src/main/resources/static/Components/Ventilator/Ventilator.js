@@ -3,23 +3,27 @@ import './Ventilator.css';
 import TriggerSettings from '../TriggerSettings/TriggerSettings';
 import Graphs from '../Graphs/Graphs';
 
-const patient = {
-  mode: 'PC/AC',
-  time: '03/04/2020'
-}
-
 class Ventilator extends React.Component {
   render() {
+    const patient = this.props.patient;
+    const placeholder = (
+      <div class="placeholder">
+        <h2>Please, select a patient</h2>
+        <h3>Ventilator information will be displayed in real time</h3>
+      </div>
+    );
     return (
       <div className="Ventilator">
-        <div class="Ventilator-header">
-          {patient.name}
+        <div className="Ventilator-header section">
+          <div className="info">{patient ? patient.name : '-'}</div>
+          <div className="info">{patient ? patient.timestamp : '-'}</div>
+          <div className="info">Mode: {patient ? patient.mode : '-'}</div>
         </div>
-        <div class="Ventilator-content">
-          <Graphs />
-          <TriggerSettings />
+        <div className="Ventilator-content section">
+          {patient ? <Graphs /> : placeholder}
+          <TriggerSettings settings={patient ? patient.triggerSettings : null}/>
         </div>
-        <div class="Ventilator-footer">
+        <div className="Ventilator-footer section">
         </div>
       </div>
     );

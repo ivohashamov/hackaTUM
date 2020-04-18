@@ -1,25 +1,52 @@
+.section {
+  position: absolute;
+  width: calc(100% - 455px);
+  min-width: 700px;
+}
 
 .Ventilator-header {
-  position: absolute;
   height: 50px;
-  width: calc(100% - 455px);
   background-color: #b1a296;
   text-align: left;
   padding: 10px;
   border-left: 2px dashed #5d5c61;
+  display: flex;
+  padding-left: 40px;
+}
+
+.info {
+  margin-right: 80px;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.placeholder {
+  background-color: #5d5c61;
+  width: 80%;
+  height: 100%;
+  min-width: 500px;
+}
+
+.placeholder h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.placeholder h3 {
+  font-size: 1.5rem;
+  margin-top: 40px;
 }
 
 .Ventilator-content {
-  position: absolute;
   height: calc(100% - 130px);
   top: 50px;
   display: flex;
-  width: calc(100% - 455px);
+  min-height: 400px;
 }
 
 .Ventilator-footer {
   top: calc(100% - 80px);
-  position: absolute;
   height: 80px;
-  width: calc(100% - 455px);
+  background-color: #b1a296;
 }

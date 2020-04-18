@@ -9,7 +9,6 @@
   margin: 5px;
   width: 60%;
   font-size: 1.25rem;
-  font-size: 1.25rem;
   border-radius: 5px;
 }
 
@@ -19,4 +18,8 @@
   font-size: 1.25rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.SearchBar button:hover {
+  background-color: #5d5c61;
 }

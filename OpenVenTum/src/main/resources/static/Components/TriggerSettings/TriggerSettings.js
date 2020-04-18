@@ -1,52 +1,53 @@
 import React from 'react';
 import './TriggerSettings.css';
 
-const arr = [{
+const defaultSettings = [{
   parameter: 'FiO2',
   unit: '%',
-  value: 10
+  value: '-'
 },
 {
-  parameter: 'FiO2',
+  parameter: 'humidity',
   unit: '%',
-  value: 10
+  value: '-'
 },
 {
-  parameter: 'FiO2',
+  parameter: 'pressure_max',
   unit: '%',
-  value: 10
+  value: '-'
 },
 {
-  parameter: 'FiO2',
+  parameter: 'RR',
   unit: '%',
-  value: 10
+  value: '-'
 },
 {
-  parameter: 'FiO2',
+  parameter: 'VT',
   unit: '%',
-  value: 10
+  value: '-'
 },
 {
-  parameter: 'FiO2',
+  parameter: 'PEEP',
   unit: '%',
-  value: 10
+  value: '-'
 },
 {
-  parameter: 'FiO2',
+  parameter: 'IE',
   unit: '%',
-  value: 10
+  value: '-'
 }];
 
 class TriggerSettings extends React.Component {
   render() {
-    const settings = arr.map(setting => {
+    let settings = this.props.settings || defaultSettings;
+    settings = settings.map(setting => {
       return (
         <div className="Setting">
           <p id="param">
             <div id="bold">{setting.parameter}</div>{setting.unit}
           </p>
           <br />
-          <p id="value">{setting.value}</p>
+          <p id="value" class="values">{setting.value}</p>
         </div>
       );
     })

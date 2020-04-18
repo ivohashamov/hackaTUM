@@ -20,7 +20,6 @@
   height: 150px;
   width: 100%;
   display: flex;
-  border: 3px solid black;
 }
 
 #logo {
@@ -38,7 +37,7 @@
 h1 {
   font-weight: 600;
   min-width: 900px;
-  padding: 30px;
+  padding: 35px;
   font-size: 4rem;
   width: 70%;
 }

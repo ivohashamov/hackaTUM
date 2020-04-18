@@ -1,6 +1,6 @@
 .section {
   position: absolute;
-  width: calc(100% - 455px);
+  width: calc(100% - 560px);
   min-width: 700px;
 }
 
@@ -10,6 +10,7 @@
   text-align: left;
   padding: 10px;
   border-left: 2px dashed #5d5c61;
+  border-right: 2px dashed #5d5c61;
   display: flex;
   padding-left: 40px;
 }
@@ -43,10 +44,12 @@
   top: 50px;
   display: flex;
   min-height: 400px;
+  border-left: 2px dashed #5d5c61;
 }
 
 .Ventilator-footer {
   top: calc(100% - 80px);
   height: 80px;
   background-color: #b1a296;
+  border-right: 2px dashed #5d5c61;
 }

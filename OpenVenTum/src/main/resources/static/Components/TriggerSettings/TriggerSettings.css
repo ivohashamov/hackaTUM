@@ -1,6 +1,8 @@
 .TriggerSettings {
   width: 20%;
   height: 100%;
+  min-width: 150px;
+  background-color: #5d5c61;
 }
 
 .Setting {
@@ -10,12 +12,13 @@
   color: white;
   border: 2px solid #5d5c61;
   display: flex;
-
+  border-radius: 5px;
+  align-content: flex-end;
 }
 
 #param {
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 30%;
   margin: 5px;
 }
@@ -26,9 +29,12 @@
 }
 
 #value {
-  font-size: 3.5rem;
-  align-content: flex-end;
+  font-size: 3rem;
   width: 70%;
-  margin: 5px;
   text-align: right;
+}
+
+.values {
+  margin: auto 0;
+  padding-right: 5px;
 }
