@@ -1,5 +1,5 @@
-from scripts.library.sklearn.cluster import KMeans
-from scripts.library.tinydb import TinyDB
+from sklearn.cluster import KMeans
+from tinydb import TinyDB
 import argparse as ap
 parser = ap.ArgumentParser()
 parser.add_argument('--v', required=True, type=int)
@@ -7,8 +7,8 @@ args = parser.parse_args()
 v = args.v
 
 
-def cluster_reades(v):
-    db = TinyDB('./DB/api_data_base.json', default_table='ventilators_data')
+def cluster_reades(num_of_vent):
+    db = TinyDB('scripts/DB/api_data_base.json', default_table='ventilators_data')
     last_data_for_all_patient = {}
     info_for_all_patients = db.all()
 
@@ -23,7 +23,7 @@ def cluster_reades(v):
     last_data_for_all_patient = [[v if type(v) == int else hash(v) for num, v in enumerate(
         unit.values()) if num > 2] for unit in last_data_for_all_patient]
 
-    array_with_clusts = cluster(v, last_data_for_all_patient)
+    array_with_clusts = cluster(len(last_data_for_all_patient) - num_of_vent, last_data_for_all_patient)
     clusters = {}
     for i, num in enumerate(array_with_clusts):
         if num in clusters:

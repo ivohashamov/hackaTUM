@@ -1,11 +1,11 @@
-from scripts.load_data.download import download_jsons
-from scripts.library.tinydb import TinyDB
+from download import download_jsons
+from tinydb import TinyDB
 import time
 
 
 def create_table_api():
     # check if table exist
-    db = TinyDB('../DB/api_data_base.json', default_table='ventilators_data')
+    db = TinyDB('scripts/DB/api_data_base.json', default_table='ventilators_data')
     while True:
         # insert data
         for unit in download_jsons():
