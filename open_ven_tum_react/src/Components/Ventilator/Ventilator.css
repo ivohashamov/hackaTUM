@@ -20,6 +20,24 @@
   color: white;
 }
 
+.placeholder {
+  background-color: #5d5c61;
+  width: 80%;
+  height: 100%;
+  min-width: 500px;
+}
+
+.placeholder h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.placeholder h3 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+}
+
 .Ventilator-content {
   height: calc(100% - 130px);
   top: 50px;
@@ -30,4 +48,5 @@
 .Ventilator-footer {
   top: calc(100% - 80px);
   height: 80px;
+  background-color: #b1a296;
 }
