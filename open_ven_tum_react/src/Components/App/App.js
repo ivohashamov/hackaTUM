@@ -183,13 +183,14 @@ class App extends React.Component {
             </div>
             <div className="main">
               <div className="patients">
-                <SearchBar onSearch={this.updatePatientList}/>
+                <SearchBar patients={this.state.patientList} onSearch={this.updatePatientList}/>
                 <PatientList patients={this.state.patientList}
                    onClick={this.updateCurrentPatient}/>
               </div>
               <Ventilator patient={this.state.patient}/>
               <Features />
             </div>
+
           </div>
         );
         break;
