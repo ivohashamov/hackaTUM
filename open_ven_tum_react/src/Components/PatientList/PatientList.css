@@ -25,6 +25,7 @@
 .Patient p {
   padding: 5px;
   pointer-events: none;
+  width: 80%;
 }
 
 #status {

@@ -7,11 +7,24 @@ import Features from '../Features/Features';
 import Header from '../Header/Header';
 import LogIn from '../LogIn/LogIn';
 import Register from '../Register/Register';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const user = {
   name: 'Dr. Max Mustermann'
 }
+
+const updateInterval = 3;
+
+const processedParameters = {
+  vPM: '10',
+  frq: '10',
+  MVe: '10',
+  ventMode: 'PC/AC',
+  expCO2: '10',
+  expO2: '10',
+  flowrate: 10,
+  pressure: 10
+};
 
 const settings = [{
   parameter: 'FiO2',
@@ -54,56 +67,64 @@ const patients = [{
   name: 'Josh',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 2,
-  name: 'Adam',
+  name: 'Alexander von Huboldt',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 3,
   name: 'Claire Smith',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 4,
   name: 'Stephanie',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 5,
   name: 'Chloe',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 6,
   name: 'Jack',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 7,
   name: 'Lucy',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 },
 {
   id: 8,
   name: 'Hui',
   mode: 'PC/AC',
   timestamp: '03/04/2020',
-  triggerSettings: settings
+  triggerSettings: settings,
+  processedParameters: processedParameters
 }]
 
 class App extends React.Component {
@@ -112,10 +133,18 @@ class App extends React.Component {
     this.state = {
       page: 'ventilator',
       patient: null,
-      patientList: patients
+      patientList: patients,
+      updateInterval: 5
     }
     this.updateCurrentPatient = this.updateCurrentPatient.bind(this);
     this.updatePatientList = this.updatePatientList.bind(this);
+    this.updateUpdateInterval = this.updateUpdateInterval.bind(this);
+  }
+
+  updateUpdateInterval(interval) {
+    this.setState({
+      updateInterval: interval
+    })
   }
 
   updatePatientList(pattern) {
@@ -173,7 +202,7 @@ class App extends React.Component {
           <div className="App">
             <div id="header">
               <div id="logo">
-                <img src="./logo.png"></img>
+                <img src="./logo.png" alt="Team logo"></img>
               </div>
               <h1>Open-source Ventilator</h1>
               <div id="user">
@@ -188,13 +217,12 @@ class App extends React.Component {
                    onClick={this.updateCurrentPatient}/>
               </div>
               <Ventilator patient={this.state.patient}/>
-              <Features />
+              <Features onChange={this.updateUpdateInterval}/>
             </div>
-
           </div>
         );
         break;
-
+      default:
     }
     return page;
   }
