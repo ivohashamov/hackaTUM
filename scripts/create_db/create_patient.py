@@ -5,6 +5,7 @@ parser.add_argument('--name', required=True, type=str)
 parser.add_argument('--p_id', required=True, type=str)
 parser.add_argument('--doc_id', required=True, type=str)
 parser.add_argument('--vent', required=True, type=str)
+parser.add_argument('--status', required=True, type=str)
 args = parser.parse_args()
 name = args.name
 p_id = args.p_id

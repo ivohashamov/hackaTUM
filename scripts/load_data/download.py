@@ -1,3 +1,4 @@
+import ssl
 from urllib.request import Request, urlopen
 import json as js
 
@@ -8,7 +9,8 @@ def download_jsons(link: str = None):
     # create request
     req = Request(link, headers={'User-Agent': 'Mozilla/5.0'})
     # send request
-    webpage = urlopen(req).read()
+    context = ssl._create_unverified_context()
+    webpage = urlopen(req, context=context).read()
     # utf-8
     webpage = webpage.decode('unicode_escape').encode('latin-1').decode('utf8')
     # create dictionaries
