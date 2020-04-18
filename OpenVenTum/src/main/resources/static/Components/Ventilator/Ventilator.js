@@ -6,6 +6,12 @@ import Graphs from '../Graphs/Graphs';
 class Ventilator extends React.Component {
   render() {
     const patient = this.props.patient;
+    const placeholder = (
+      <div class="placeholder">
+        <h2>Please, select a patient</h2>
+        <h3>Ventilator information will be displayed in real time</h3>
+      </div>
+    );
     return (
       <div className="Ventilator">
         <div className="Ventilator-header section">
@@ -14,8 +20,8 @@ class Ventilator extends React.Component {
           <div className="info">Mode: {patient ? patient.mode : '-'}</div>
         </div>
         <div className="Ventilator-content section">
-          <Graphs />
-          <TriggerSettings />
+          {patient ? <Graphs /> : placeholder}
+          <TriggerSettings settings={patient ? patient.triggerSettings : null}/>
         </div>
         <div className="Ventilator-footer section">
         </div>
