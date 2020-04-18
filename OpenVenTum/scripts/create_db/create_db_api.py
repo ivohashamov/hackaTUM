@@ -1,11 +1,12 @@
-from download import download_jsons
 from tinydb import TinyDB
 import time
+import os
+from download import download_jsons
 
 
 def create_table_api():
     # check if table exist
-    db = TinyDB('scripts/DB/api_data_base.json', default_table='ventilators_data')
+    db = TinyDB(os.getcwd() + '/scripts/DB/api_data_base.json', default_table='ventilators_data')
     try:
         while True:
             # insert data

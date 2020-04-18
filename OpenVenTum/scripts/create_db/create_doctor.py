@@ -6,10 +6,10 @@ parser.add_argument('--doc_id', required=True, type=str)
 args = parser.parse_args()
 name = args.name
 doc_id = args.doc_id
-
+import os
 
 def create_doctor(name: str, doc_id: str):
-    db = TinyDB('scripts/DB/doctor_data_base.json', default_table='doctor')
+    db = TinyDB(os.getcwd() + '/scripts/DB/doctor_data_base.json', default_table='doctor')
     query = Query()
 
     # check if doctor with this id exist
