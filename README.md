@@ -29,4 +29,4 @@ Through this platform, we learned the importance of using data and providing it 
 ## References
 - https://www.lhsc.on.ca/critical-care-trauma-centre/mechanical-ventilator
 
-```System.out.println("We will come through this together")```  **#stayathome**
+```System.out.println("We will come through this together!")```  **#stayathome**
