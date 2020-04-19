@@ -56,10 +56,15 @@ class App extends React.Component {
     this.state = {
       page: 'ventilator',
       patient: null,
-      patientList: []
+      patientList: [],
+      settings: [],
+      raw:[],
+      processed:[],
+      data:[]
     }
     this.updateCurrentPatient = this.updateCurrentPatient.bind(this);
     this.updatePatientList = this.updatePatientList.bind(this);
+    this.retrievedata=this.retrievedata.bind(this);
   }
 
   updatePatientList(pattern) {
@@ -79,6 +84,53 @@ class App extends React.Component {
     this.setState({
       patientList: newList
     });
+  }
+
+  retrievedata(data){
+    console.log(55)
+    this.setState({
+      data: data,
+      settings: [
+        {
+          parameter: 'FiO2',
+          unit: '%',
+          value: data.fio2
+        },
+        {
+          parameter: 'humidity',
+          unit: '%',
+          value: data.humidity
+        },
+        {
+          parameter: 'pressure_max',
+          unit: 'cmH2O',
+          value: data.pressure_max
+        },
+        {
+          parameter: 'frequency',
+          unit: '%',
+          value: data.frequency
+        },
+        {
+          parameter: 'VT',
+          unit: 'mL',
+          value: data.vt
+        },
+        {
+          parameter: 'PEEP',
+          unit: 'cmH20',
+          value: data.peep
+        },
+        {
+          parameter: 'IE',
+          unit: '-',
+          value: data.ie
+        }
+      ]
+
+    })
+
+    console.log(this.state.settings);
   }
 
   componentDidMount() { // <2>
@@ -138,7 +190,7 @@ class App extends React.Component {
               <div className="patients">
                 <SearchBar patients={this.state.patientList} onSearch={this.updatePatientList}/>
                 <PatientList patients={this.state.patientList}
-                   onClick={this.updateCurrentPatient}/>
+                   onClick={this.updateCurrentPatient} function={this.retrievedata}/>
               </div>
               <Ventilator patient={this.state.patient}/>
               <Features />

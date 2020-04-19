@@ -333,7 +333,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".TriggerSettings {\r\n  width: 20%;\r\n  height: 100%;\r\n  min-width: 150px;\r\n  background-color: #5d5c61;\r\n}\r\n\r\n.Setting {\r\n  height: 14.285%;\r\n  width: 100%;\r\n  background-color: #7395ae;\r\n  color: white;\r\n  border: 2px solid #5d5c61;\r\n  display: flex;\r\n  border-radius: 5px;\r\n  align-content: flex-end;\r\n}\r\n\r\n#param {\r\n  display: flex;\r\n  font-size: 1rem;\r\n  width: 30%;\r\n  margin: 5px;\r\n}\r\n\r\n#bold {\r\n  font-weight: 600;\r\n  margin-right: 5px;\r\n}\r\n\r\n#value {\r\n  font-size: 3rem;\r\n  width: 70%;\r\n  text-align: right;\r\n}\r\n\r\n.values {\r\n  margin: auto 0;\r\n  padding-right: 5px;\r\n}\r\n", ""]);
+exports.push([module.i, ".TriggerSettings {\r\n  width: 20%;\r\n  height: 100%;\r\n  min-width: 150px;\r\n  background-color: #5d5c61;\r\n}\r\n\r\n.Setting {\r\n  height: 14.285%;\r\n  width: 100%;\r\n  background-color: #7395ae;\r\n  color: white;\r\n  border: 2px solid #5d5c61;\r\n  border-radius: 5px;\r\n}\r\n\r\n#param {\r\n  text-align: left;\r\n  padding-top: 5px;\r\n  padding-left: 5px;\r\n  font-size: 1rem;\r\n  width: 100%;\r\n}\r\n\r\n#bold {\r\n  font-weight: 600;\r\n  display: inline;\r\n  margin-right: 5px;\r\n}\r\n\r\n#value {\r\n  position: relative;\r\n  font-size: 2.2rem;\r\n  padding-right: 5px;\r\n  width: 100%;\r\n  height: auto;\r\n  text-align: right;\r\n}\r\n\r\n.values {\r\n  margin: 0;\r\n  padding: 0;\r\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -38769,10 +38769,15 @@ var App = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       page: 'ventilator',
       patient: null,
-      patientList: []
+      patientList: [],
+      settings: [],
+      raw: [],
+      processed: [],
+      data: []
     };
     _this.updateCurrentPatient = _this.updateCurrentPatient.bind(_assertThisInitialized(_this));
     _this.updatePatientList = _this.updatePatientList.bind(_assertThisInitialized(_this));
+    _this.retrievedata = _this.retrievedata.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -38796,6 +38801,44 @@ var App = /*#__PURE__*/function (_React$Component) {
       this.setState({
         patientList: newList
       });
+    }
+  }, {
+    key: "retrievedata",
+    value: function retrievedata(data) {
+      console.log(55);
+      this.setState({
+        data: data,
+        settings: [{
+          parameter: 'FiO2',
+          unit: '%',
+          value: data.fio2
+        }, {
+          parameter: 'humidity',
+          unit: '%',
+          value: data.humidity
+        }, {
+          parameter: 'pressure_max',
+          unit: 'cmH2O',
+          value: data.pressure_max
+        }, {
+          parameter: 'frequency',
+          unit: '%',
+          value: data.frequency
+        }, {
+          parameter: 'VT',
+          unit: 'mL',
+          value: data.vt
+        }, {
+          parameter: 'PEEP',
+          unit: 'cmH20',
+          value: data.peep
+        }, {
+          parameter: 'IE',
+          unit: '-',
+          value: data.ie
+        }]
+      });
+      console.log(this.state.settings);
     }
   }, {
     key: "componentDidMount",
@@ -38867,7 +38910,8 @@ var App = /*#__PURE__*/function (_React$Component) {
             onSearch: this.updatePatientList
           }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PatientList_PatientList__WEBPACK_IMPORTED_MODULE_3__["default"], {
             patients: this.state.patientList,
-            onClick: this.updateCurrentPatient
+            onClick: this.updateCurrentPatient,
+            "function": this.retrievedata
           })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Ventilator_Ventilator__WEBPACK_IMPORTED_MODULE_4__["default"], {
             patient: this.state.patient
           }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Features_Features__WEBPACK_IMPORTED_MODULE_5__["default"], null)));
@@ -39350,7 +39394,7 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       prevId: null,
-      data: null
+      data: []
     };
     _this.handleClickEvent = _this.handleClickEvent.bind(_assertThisInitialized(_this));
     return _this;
@@ -39359,11 +39403,8 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
   _createClass(PatientList, [{
     key: "handleClickEvent",
     value: function handleClickEvent(event) {
-      // if (this.state.prevId !== null && document.getElementById(this.state.prevId)) {
-      //   document.getElementById(this.state.prevId).style.backgroundColor = "";
-      // }
-      //alert(event.target.id)
-      //this.state.prevId = event.target.id;
+      var _this2 = this;
+
       var id = event.target.getAttribute('value');
       console.log(id);
       this.props.onClick(Number(event.target.getAttribute('value')));
@@ -39371,13 +39412,18 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
         method: 'GET',
         path: '/data/' + id.toString()
       }).done(function (response) {
-        return console.log(response);
-      }); //document.getElementById(event.target.id).style.backgroundColor = '#5d5c61';
+        var data1 = response.entity;
+
+        _this2.setState({
+          data: data1
+        });
+      });
+      this.props["function"](this.state.data);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var patients = this.props.patients.map(function (patient) {
         var id = patient._links.self.href.substr(patient._links.self.href.lastIndexOf("/") + 1);
@@ -39385,7 +39431,7 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: id,
           className: "Patient",
-          onClick: _this2.handleClickEvent,
+          onClick: _this3.handleClickEvent,
           value: id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "status"
@@ -39681,31 +39727,31 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 var defaultSettings = [{
   parameter: 'FiO2',
   unit: '%',
-  value: '-'
+  value: '0'
 }, {
   parameter: 'humidity',
   unit: '%',
-  value: '-'
+  value: '0'
 }, {
   parameter: 'pressure_max',
-  unit: '%',
-  value: '-'
+  unit: 'cmH2O',
+  value: '0'
 }, {
-  parameter: 'RR',
+  parameter: 'frequency',
   unit: '%',
-  value: '-'
+  value: '0'
 }, {
   parameter: 'VT',
-  unit: '%',
-  value: '-'
+  unit: 'mL',
+  value: '0'
 }, {
   parameter: 'PEEP',
-  unit: '%',
-  value: '-'
+  unit: 'cmH20',
+  value: '0'
 }, {
   parameter: 'IE',
-  unit: '%',
-  value: '-'
+  unit: '-',
+  value: '0'
 }];
 
 var TriggerSettings = /*#__PURE__*/function (_React$Component) {
@@ -39726,11 +39772,11 @@ var TriggerSettings = /*#__PURE__*/function (_React$Component) {
       settings = settings.map(function (setting) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "Setting"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "param"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "bold"
-        }, setting.parameter), setting.unit), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, setting.parameter), "(", setting.unit, ")"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           id: "value",
           "class": "values"
         }, setting.value));

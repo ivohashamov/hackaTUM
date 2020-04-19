@@ -9,26 +9,24 @@ class PatientList extends React.Component {
     super(props);
      this.state = {
       prevId: null,
-       data:null
+       data:[]
      }
     this.handleClickEvent = this.handleClickEvent.bind(this);
   }
 
-  handleClickEvent(event) {
-    // if (this.state.prevId !== null && document.getElementById(this.state.prevId)) {
-    //   document.getElementById(this.state.prevId).style.backgroundColor = "";
-    // }
-    //alert(event.target.id)
-    //this.state.prevId = event.target.id;
-    let id=event.target.getAttribute('value');
-    console.log(id);
-    this.props.onClick(Number(event.target.getAttribute('value')));
-    client({method: 'GET', path: '/data/'+id.toString()}).done(response => {
-      this.setState({data: response.entity});
-    });
-    console.log(this.state.data.deviceId)
-    //document.getElementById(event.target.id).style.backgroundColor = '#5d5c61';
+   handleClickEvent(event) {
+      let id = event.target.getAttribute('value');
+      console.log(id);
+      this.props.onClick(Number(event.target.getAttribute('value')));
+
+          client({method: 'GET', path: '/data/' + id.toString()}).done(response => {
+                var data1=response.entity;
+              this.setState({data: data1});
+          });
+          this.props.function(this.state.data)
   }
+
+
 
   render() {
     const patients = this.props.patients.map(patient => {
