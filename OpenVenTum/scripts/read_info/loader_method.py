@@ -24,7 +24,7 @@ def load_data(p_id: str ,num_to_cut: str=10, cut: bool=False):
 
 def cutter(elements, num: int, cut: bool):
     if cut:
-        elements = elements[-num:]
+        elements = elements[-1]
     return elements
 
 

@@ -9,7 +9,7 @@ parser.add_argument('--t', type=int)
 args = parser.parse_args()
 t = args.t
 
-def create_table_api(timer: int=5):
+def create_table_api(timer: int=1):
     # check if table exist
     db = TinyDB(os.getcwd() + '/scripts/DB/api_data_base.json', default_table='ventilators_data')
     try:
