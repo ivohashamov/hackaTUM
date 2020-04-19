@@ -15,6 +15,83 @@ const user = {
 
 const updateInterval = 3;
 
+const data = [[
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  51,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60
+],[
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  51,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60
+],[
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  51,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60,
+  50,
+  0,
+  -60
+]]
+
 const processedParameters = {
   vPM: '10',
   frq: '10',
@@ -38,27 +115,27 @@ const settings = [{
 },
 {
   parameter: 'pressure_max',
-  unit: '%',
+  unit: 'cmH2O',
   value: 10
 },
 {
   parameter: 'RR',
-  unit: '%',
+  unit: '1/min',
   value: 10
 },
 {
   parameter: 'VT',
-  unit: '%',
+  unit: 'mL',
   value: 10
 },
 {
   parameter: 'PEEP',
-  unit: '%',
+  unit: 'cmH2O',
   value: 10
 },
 {
   parameter: 'IE',
-  unit: '%',
+  unit: '',
   value: 10
 }];
 
@@ -208,7 +285,7 @@ class App extends React.Component {
                 <PatientList patients={this.state.patientList}
                    onClick={this.updateCurrentPatient}/>
               </div>
-              <Ventilator patient={this.state.patient}/>
+              <Ventilator patient={this.state.patient} graphData={data}/>
               <Features onChange={this.updateUpdateInterval}/>
             </div>
           </div>

@@ -20,7 +20,7 @@ class Ventilator extends React.Component {
           <div className="info">Mode: {patient ? patient.processedParameters.ventMode : '-'}</div>
         </div>
         <div className="Ventilator-content section">
-          {patient ? <Graphs /> : placeholder}
+          {patient ? <Graphs graphData={this.props.graphData}/> : placeholder}
           <TriggerSettings settings={patient ? patient.triggerSettings : null}/>
         </div>
         <div className="Ventilator-footer section">
