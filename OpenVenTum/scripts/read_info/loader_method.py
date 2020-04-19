@@ -6,7 +6,7 @@ def load_data(p_id: str ,num_to_cut: str=10, cut: bool=False):
     query = Query()
     info_for_given_patient = db.search(query.data_id == load_vent_id(p_id))
     db.close()
-    return info_for_given_patient
+    return info_for_given_patient[-1]
     """
     d_with_nums = {}
     for unit in info_for_given_patient:
