@@ -38782,8 +38782,10 @@ var App = /*#__PURE__*/function (_React$Component) {
       var newList = [];
 
       if (pattern) {
-        patients.forEach(function (element) {
-          if (element.name.toLowerCase().includes(pattern.toLowerCase()) || element.id.toString().includes(pattern)) {
+        this.state.patientList.forEach(function (element) {
+          var id = element._links.self.href.substr(element._links.self.href.lastIndexOf("/") + 1);
+
+          if (element.name.toLowerCase().includes(pattern.toLowerCase()) || id.toString().includes(pattern)) {
             newList.push(element);
           }
         });
@@ -38814,8 +38816,10 @@ var App = /*#__PURE__*/function (_React$Component) {
     key: "updateCurrentPatient",
     value: function updateCurrentPatient(id) {
       var temp = null;
-      patients.forEach(function (element) {
-        if (element.id === id) {
+      this.state.patientList.forEach(function (element) {
+        var elid = element._links.self.href.substr(element._links.self.href.lastIndexOf("/") + 1);
+
+        if (elid === id) {
           temp = element;
         }
       });
@@ -39305,6 +39309,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _PatientList_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PatientList.css */ "./src/main/resources/static/Components/PatientList/PatientList.css");
 /* harmony import */ var _PatientList_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_PatientList_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../client */ "./src/main/resources/static/Components/client.js");
+/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_client__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39330,6 +39336,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var PatientList = /*#__PURE__*/function (_React$Component) {
   _inherits(PatientList, _React$Component);
 
@@ -39340,10 +39347,11 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, PatientList);
 
-    _this = _super.call(this, props); // this.state = {
-    //   prevId: null
-    // }
-
+    _this = _super.call(this, props);
+    _this.state = {
+      prevId: null,
+      data: null
+    };
     _this.handleClickEvent = _this.handleClickEvent.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -39356,7 +39364,15 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
       // }
       //alert(event.target.id)
       //this.state.prevId = event.target.id;
-      this.props.onClick(Number(event.target.getAttribute('value'))); //document.getElementById(event.target.id).style.backgroundColor = '#5d5c61';
+      var id = event.target.getAttribute('value');
+      console.log(id);
+      this.props.onClick(Number(event.target.getAttribute('value')));
+      _client__WEBPACK_IMPORTED_MODULE_2___default()({
+        method: 'GET',
+        path: '/data/' + id.toString()
+      }).done(function (response) {
+        return console.log(response);
+      }); //document.getElementById(event.target.id).style.backgroundColor = '#5d5c61';
     }
   }, {
     key: "render",
@@ -39366,7 +39382,6 @@ var PatientList = /*#__PURE__*/function (_React$Component) {
       var patients = this.props.patients.map(function (patient) {
         var id = patient._links.self.href.substr(patient._links.self.href.lastIndexOf("/") + 1);
 
-        console.log(id);
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: id,
           className: "Patient",

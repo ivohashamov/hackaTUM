@@ -65,7 +65,7 @@ class App extends React.Component {
   updatePatientList(pattern) {
     let newList = [];
     if (pattern) {
-      patientList.forEach(element => {
+      this.state.patientList.forEach(element => {
         let id=element._links.self.href.substr(element._links.self.href.lastIndexOf("/") + 1);
         if (element.name.toLowerCase().includes(pattern.toLowerCase())
             || id.toString().includes(pattern)) {
@@ -90,7 +90,7 @@ class App extends React.Component {
 
   updateCurrentPatient(id) {
     let temp = null;
-    patientList.forEach(element => {
+    this.state.patientList.forEach(element => {
       let elid=element._links.self.href.substr(element._links.self.href.lastIndexOf("/") + 1);
       if (elid === id) {
         temp = element;

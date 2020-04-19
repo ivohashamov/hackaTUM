@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tum.vent.OpenVenTum.PythonUtils.PythonRunner;
 import com.tum.vent.OpenVenTum.PythonUtils.json.Deserializer;
 import com.tum.vent.OpenVenTum.PythonUtils.model.PatientJson;
+import com.tum.vent.OpenVenTum.PythonUtils.model.VentilatorDataJson;
 import com.tum.vent.OpenVenTum.model.Patient;
 import com.tum.vent.OpenVenTum.repositories.PatientRepository;
 import com.tum.vent.OpenVenTum.repositories.VentilatorDataRepository;
@@ -36,6 +37,7 @@ public class DatabaseLoader implements CommandLineRunner {
         Deserializer deserializer=new Deserializer(new ObjectMapper());
         PatientJson[] arr =deserializer.deserializePatientArray(PythonRunner.retrieve_patients("10"));
         patientRepository.saveAll(Arrays.stream(arr).map(pj->new Patient(pj.getP_id(),pj.getName(),pj.getDoc_id())).collect(Collectors.toList()));
+
 
     }
 }

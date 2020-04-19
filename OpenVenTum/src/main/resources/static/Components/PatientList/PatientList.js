@@ -1,14 +1,16 @@
 import React from 'react';
 import './PatientList.css';
+import client from "../client";
 
 
 
 class PatientList extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   prevId: null
-    // }
+     this.state = {
+      prevId: null,
+       data:null
+     }
     this.handleClickEvent = this.handleClickEvent.bind(this);
   }
 
@@ -18,7 +20,13 @@ class PatientList extends React.Component {
     // }
     //alert(event.target.id)
     //this.state.prevId = event.target.id;
+    let id=event.target.getAttribute('value');
+    console.log(id);
     this.props.onClick(Number(event.target.getAttribute('value')));
+    client({method: 'GET', path: '/data/'+id.toString()}).done(response => {
+      this.setState({data: response.entity});
+    });
+    console.log(this.state.data.deviceId)
     //document.getElementById(event.target.id).style.backgroundColor = '#5d5c61';
   }
 
