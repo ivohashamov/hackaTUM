@@ -13,27 +13,27 @@ const defaultSettings = [{
 },
 {
   parameter: 'pressure_max',
-  unit: '%',
+  unit: 'cmH2O',
   value: '0'
 },
 {
   parameter: 'RR',
-  unit: '%',
+  unit: '1/min',
   value: '0'
 },
 {
   parameter: 'VT',
-  unit: '%',
+  unit: 'mL',
   value: '0'
 },
 {
   parameter: 'PEEP',
-  unit: '%',
+  unit: 'cmH20',
   value: '0'
 },
 {
   parameter: 'IE',
-  unit: '%',
+  unit: '-',
   value: '0'
 }];
 
@@ -43,10 +43,9 @@ class TriggerSettings extends React.Component {
     settings = settings.map(setting => {
       return (
         <div className="Setting">
-          <p id="param">
-            <div id="bold">{setting.parameter}</div>{setting.unit}
-          </p>
-          <br />
+          <div id="param">
+            <div id="bold">{setting.parameter}</div>({setting.unit})
+          </div>
           <p id="value" class="values">{setting.value}</p>
         </div>
       );
